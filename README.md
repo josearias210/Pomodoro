@@ -14,11 +14,8 @@ Aplicación pomodoro realizada con Xamarin Forms para dispositivos android. Se c
 - Multi-Lenguaje
 - Manejo de audio
 
-# Empezando
-Debe tener el ambiente de desarrollo configurado correctamente para poder depurar.
-
 # Consideraciones
-- Cuando ejecute la aplicación cuando ingrese a la parte de **historial** aparecerá un mensaje de licencia, si desea eliminar ese mensaje debe ejecutar el proceso que se indica en el mismo.
+- Cuando ejecute la aplicación e ingrese a la parte de **historial** aparecerá un mensaje de licencia de syncfusion, si desea eliminar ese mensaje debe ejecutar el proceso que se indica en el mismo.
 
 - En el caso que desee probar la integración con la app center debe crear una cuenta (tiene una versión gratuita) y agregar el token en archivo **App.xaml.cs** en la línea que indica a continuación: 
 ```
