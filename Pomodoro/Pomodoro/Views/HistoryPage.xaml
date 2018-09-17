@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:i18n="clr-namespace:Pomodoro.Extensions"
+             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             xmlns:chart="clr-namespace:Syncfusion.SfChart.XForms;assembly=Syncfusion.SfChart.XForms"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="Pomodoro.Views.HistoryPage"
+             Title="{i18n:Translate History}">
+    
+    <chart:SfChart HorizontalOptions="FillAndExpand"
+                   VerticalOptions="FillAndExpand">
+
+        <chart:SfChart.ChartBehaviors>
+            <chart:ChartZoomPanBehavior ZoomMode="X"/>
+        </chart:SfChart.ChartBehaviors>
+        
+        <chart:SfChart.Legend>
+            <chart:ChartLegend IsVisible="True"/>
+        </chart:SfChart.Legend>
+
+        <chart:SfChart.Title>
+            <chart:ChartTitle Text="{i18n:Translate SummaryDay}" />
+        </chart:SfChart.Title>
+
+
+        <chart:SfChart.PrimaryAxis>
+            <chart:DateTimeAxis IntervalType="Days"
+                                Interval="1"  
+                                LabelRotationAngle="-90"
+                                AxisLineOffset="10"
+                                PlotOffset="10">
+                
+                <chart:DateTimeAxis.Title>
+                    <chart:ChartAxisTitle Text="{i18n:Translate Day}"></chart:ChartAxisTitle>
+                </chart:DateTimeAxis.Title>
+            </chart:DateTimeAxis>
+
+        </chart:SfChart.PrimaryAxis>
+
+        <chart:SfChart.SecondaryAxis>
+            <chart:NumericalAxis  >
+                <chart:NumericalAxis.Title>
+                    <chart:ChartAxisTitle Text="{i18n:Translate DurationMin}"></chart:ChartAxisTitle>
+                </chart:NumericalAxis.Title>
+            </chart:NumericalAxis>
+        </chart:SfChart.SecondaryAxis>
+
+        <chart:SfChart.Series>
+            <chart:LineSeries ItemsSource="{Binding Workings}" 
+                              XBindingPath="Category" 
+                              YBindingPath="Value" 
+                              Color="{StaticResource Green}"  
+                              EnableTooltip="True"  
+                              IsVisibleOnLegend="True"
+                              Label="{i18n:Translate Pomodoros}">
+
+            </chart:LineSeries>
+
+            <chart:LineSeries ItemsSource="{Binding Breaks}"
+                              XBindingPath="Category"
+                              YBindingPath="Value"
+                              Color="{StaticResource Red}"
+                              EnableTooltip="True"
+                              IsVisibleOnLegend="True"
+                              Label="{i18n:Translate Breaks}">
+
+            </chart:LineSeries>
+        </chart:SfChart.Series>
+
+    </chart:SfChart>
+
+</ContentPage>

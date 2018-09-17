@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms"
+                  xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                  xmlns:i18n="clr-namespace:Pomodoro.Extensions"
+                  xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+                  x:Class="Pomodoro.Views.PomodoroMasterDetailPage"
+                  prism:ViewModelLocator.AutowireViewModel="True">
+  <MasterDetailPage.Master>
+        <ContentPage Title="{i18n:Translate Menu}">
+
+            <ListView ItemsSource="{Binding MenuItems}"
+              CachingStrategy="RecycleElement"
+              SeparatorColor="Transparent"
+              BackgroundColor="{StaticResource PrimaryDark}"
+              SelectedItem="{Binding SelectedItem}"
+              HasUnevenRows="True">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal">
+                                <Image Source="{Binding Icon}"
+                                       HeightRequest="40"
+                                       WidthRequest="40" 
+                                       Margin="0,5" />
+                                <Label Text="{Binding Title}"
+                                       TextColor="{StaticResource White}"
+                                       FontSize="20"
+                                       VerticalOptions="Center"/>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+        </ContentPage>
+    </MasterDetailPage.Master>
+    
+</MasterDetailPage>

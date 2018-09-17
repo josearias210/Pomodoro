@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<prism:PrismApplication
+    xmlns:prism="clr-namespace:Prism.Unity;assembly=Prism.Unity.Forms" xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Pomodoro.App">
+    <Application.Resources>
+        <Color x:Key="Primary">#F44336</Color>
+        <Color x:Key="PrimaryDark">#A52019</Color>
+        <Color x:Key="PrimaryLight">#FFCDD2</Color>
+        <Color x:Key="Accent">#FF5722</Color>
+        <Color x:Key="PrimaryText">#212121</Color>
+        <Color x:Key="SecondaryText">#757575</Color>
+        <Color x:Key="Icons">#FFFFFF</Color>
+        <Color x:Key="Window_background">#F5F5F5</Color>
+        <Color x:Key="Divider">#BDBDBD</Color>
+        <Color x:Key="White">#FFFFFF</Color>
+        <Color x:Key="Green">Green</Color>
+        <Color x:Key="GreenDark">DarkGreen</Color>
+        <Color x:Key="Red">Red</Color>
+        <Color x:Key="RedDark">#A52019</Color>
+        <Color x:Key="RedIndian">IndianRed</Color>
+
+        <Style x:Key="BtnAction" TargetType="Button">
+            <Setter Property="BackgroundColor" Value="{StaticResource Primary}" />
+            <Setter Property="TextColor" Value="{StaticResource White}" />
+        </Style>
+
+
+    </Application.Resources>
+</prism:PrismApplication>

@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:i18n="clr-namespace:Pomodoro.Extensions"
+             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="Pomodoro.Views.ConfigurationPage"
+             Title="{i18n:Translate Configurations}">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Order="Secondary"
+                     Text="{i18n:Translate RestartHistory}"
+                     Priority="1"
+                     Command="{Binding ResetCommand}"
+                     CommandParameter="1" />
+
+    </ContentPage.ToolbarItems>
+    <ScrollView>
+        <StackLayout VerticalOptions="FillAndExpand"
+                 Padding="10">
+            <Label  Text="{i18n:Translate TimePomodoro}" />
+            <Picker ItemsSource="{Binding Working}"
+                    SelectedItem="{Binding SelectedWorking}"/>
+
+            <Label  Text="{i18n:Translate ShortBreaks}" />
+            <Picker ItemsSource="{Binding ShortBreaks}"
+                    SelectedItem="{Binding SelectedShortBreaks}"/>
+
+            <Label Text="{i18n:Translate LongBreaks}" />
+            <Picker ItemsSource="{Binding LongBreaks}" 
+                    SelectedItem="{Binding SelectedLongBreaks}" />
+
+            <Label  Text="{i18n:Translate NumberPomodoro}" />
+            <Picker ItemsSource="{Binding Pomodoros}" 
+                    SelectedItem="{Binding SelectedPomodoros}" />
+
+            <Button Text="{i18n:Translate Save}"
+               Style="{StaticResource BtnAction}"
+               VerticalOptions="EndAndExpand"
+               HorizontalOptions="FillAndExpand"
+               Command="{Binding SaveCommand}"/>
+
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

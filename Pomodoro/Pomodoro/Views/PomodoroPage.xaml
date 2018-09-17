@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:i18n="clr-namespace:Pomodoro.Extensions"
+             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             xmlns:Inverter="clr-namespace:Pomodoro.Converts"
+             xmlns:controls="clr-namespace:Pomodoro.Controls"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="Pomodoro.Views.PomodoroPage"
+             Title="{i18n:Translate Pomodoro}">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Inverter:InverseBooleanConverter x:Key="Inverter"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Order="Secondary"
+                     Text="{i18n:Translate Pomodoro}"
+                     Priority="1"
+                     Command="{Binding ChangeStateCommand}"
+                     CommandParameter="1" />
+        
+        <ToolbarItem Order="Secondary"
+                     Text="{i18n:Translate ShortBreakSet}"
+                     Priority="2" 
+                     Command="{Binding ChangeStateCommand}"
+                     CommandParameter="2" />
+
+        <ToolbarItem Order="Secondary"
+                     Text="{i18n:Translate LongBreakSet}"
+                     Priority="3" 
+                     Command="{Binding ChangeStateCommand}"
+                     CommandParameter="3" />
+        
+    </ContentPage.ToolbarItems>
+    <Grid>
+        <Grid.Triggers>
+            <DataTrigger TargetType="Grid" 
+                         Binding="{Binding IsWorking}" 
+                         Value="True">
+                <Setter Property="BackgroundColor" Value="{StaticResource Green}" />
+            </DataTrigger>
+
+            <DataTrigger TargetType="Grid" 
+                         Binding="{Binding IsWorking, Converter={StaticResource Inverter}}"
+                         Value="True">
+                <Setter Property="BackgroundColor" Value="{StaticResource RedIndian}" />
+            </DataTrigger>
+
+        </Grid.Triggers>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition  Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <controls:CircularProgress Progress="{Binding Elapsed.TotalSeconds}"
+                                   Max="{Binding Durations}" />
+
+        <Label VerticalOptions="Center"
+               HorizontalOptions="Center" 
+               FontSize="50"
+               TextColor="White"
+               Text="{Binding Elapsed, StringFormat='{}{0:t}'}"/>
+
+        <Button Grid.Row="1"
+                Text="{i18n:Translate StartPause}"
+                TextColor="{StaticResource White}"
+                Command="{Binding StartStopCommand}">
+            <Button.Triggers>
+                <DataTrigger TargetType="Button" 
+                         Binding="{Binding IsWorking}" 
+                         Value="True">
+                    <Setter Property="BackgroundColor" Value="{StaticResource GreenDark}" />
+                </DataTrigger>
+                <DataTrigger TargetType="Button" 
+                         Binding="{Binding IsWorking, Converter={StaticResource Inverter}}" 
+                         Value="True">
+                    <Setter Property="BackgroundColor" Value="{StaticResource Red}" />
+                </DataTrigger>
+            </Button.Triggers>
+        </Button>
+    </Grid>
+    
+</ContentPage>
