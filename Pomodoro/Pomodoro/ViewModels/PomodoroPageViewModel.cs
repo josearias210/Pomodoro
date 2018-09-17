@@ -132,7 +132,7 @@ namespace Pomodoro.ViewModels
 
         private void Timer_Elapsed(object sender, ElapsedEventArgs e)
         {
-            Elapsed = Elapsed.Add(TimeSpan.FromSeconds(120));
+            Elapsed = Elapsed.Add(TimeSpan.FromSeconds(1));
 
             if (CurrentActivity == Activity.Working && Elapsed.TotalSeconds >= config.Working * 60)
             {
@@ -172,7 +172,7 @@ namespace Pomodoro.ViewModels
 
         private void ConfigureTimer()
         {
-            timer = new Timer(500);
+            timer = new Timer(1000);
             timer.Elapsed += Timer_Elapsed;
         }
 
