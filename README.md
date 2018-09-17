@@ -1,4 +1,4 @@
-# Pomodoro [![Build status](https://build.appcenter.ms/v0.1/apps/c33ba66e-f32a-4cc7-a640-9fa4db2a7b5f/branches/android/badge)](https://appcenter.ms)
+# Pomodoro [![Build status](https://build.appcenter.ms/v0.1/apps/1bcd92af-e0b0-4c20-ba05-3e5c9629dcce/branches/master/badge)](https://appcenter.ms)
 
 [![Screenshot](Screenshot/Pomodoro.png)]
 [![Screenshot](Screenshot/Historial.png)]
