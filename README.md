@@ -3,6 +3,9 @@
 [![Screenshot](Screenshot/Pomodoro.png)]
 [![Screenshot](Screenshot/Historial.png)]
 
+# Demostración
+Puedes descargar e instalar la app desde la tienda de [Google Play](https://play.google.com/store/apps/details?id=com.ariasantonio.pomodoro) 
+
 # Descripción 
 Aplicación pomodoro realizada con Xamarin Forms para dispositivos android. Se creo con la finalidad de compartir el uso de algunas utilidades externas a Xamarin Forms las cuales son muy útiles y generan dudas en muchos, algunas de estas son:
 
