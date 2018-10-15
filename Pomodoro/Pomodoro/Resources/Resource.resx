@@ -172,7 +172,7 @@
     <value>Start / Pause</value>
   </data>
   <data name="ShortBreakSet" xml:space="preserve">
-    <value>Shork Break</value>
+    <value>Short Break</value>
   </data>
   <data name="LongBreakSet" xml:space="preserve">
     <value>Long Break</value>
@@ -187,7 +187,7 @@
     <value>Are you sure you want to delete your history?</value>
   </data>
   <data name="ErrorDeleteHistory" xml:space="preserve">
-    <value>An  error occurred when deleting the history</value>
+    <value>An error occurred when deleting the history</value>
   </data>
   <data name="SuccessDeleteHistory" xml:space="preserve">
     <value>The history was successfully deleted</value>
@@ -196,6 +196,6 @@
     <value>An error occurred when saving the configuration</value>
   </data>
   <data name="SuccessSaveConfiguration" xml:space="preserve">
-    <value>Save configuration successfully</value>
+    <value>Configuration saved successfully</value>
   </data>
 </root>
