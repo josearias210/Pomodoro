@@ -2,6 +2,7 @@
 using Android.App;
 using Android.Content.PM;
 using Android.OS;
+using Plugin.LocalNotifications;
 using Prism;
 using Prism.Ioc;
 
@@ -14,6 +15,8 @@ namespace Pomodoro.Droid
         {
             TabLayoutResource = Resource.Layout.Tabbar;
             ToolbarResource = Resource.Layout.Toolbar;
+
+            LocalNotificationsImplementation.NotificationIconId = Resource.Drawable.ic_timer;
 
             base.OnCreate(bundle);
 
