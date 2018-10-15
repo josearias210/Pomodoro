@@ -143,7 +143,7 @@ namespace Pomodoro.ViewModels
                 {
                     ChangeState(Activity.LongBreak);
                     
-                    CrossLocalNotifications.Current.Show(Resources.Resource.TimePomodoro, "You can now have a long break...");
+                    CrossLocalNotifications.Current.Show("Take a break!", "You can now have a long break...");
                 }
                 else
                 {
