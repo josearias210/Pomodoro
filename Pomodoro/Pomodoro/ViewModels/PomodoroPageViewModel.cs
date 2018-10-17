@@ -1,5 +1,6 @@
 ﻿using Pomodoro.Classes;
 using Pomodoro.Events;
+using Pomodoro.Interfaces;
 using Pomodoro.Models;
 using Pomodoro.Repositories;
 using Pomodoro.Services;
@@ -9,6 +10,7 @@ using Prism.Mvvm;
 using Prism.Navigation;
 using System;
 using System.Timers;
+using Xamarin.Forms;
 
 namespace Pomodoro.ViewModels
 {
@@ -82,7 +84,8 @@ namespace Pomodoro.ViewModels
         #region Constructors
         public PomodoroPageViewModel(IEventAggregator eventAggregator)
         {
-            
+            var statusBarStyleManager = DependencyService.Get<IStatusBarStyleManager>();
+            statusBarStyleManager.SetColor((Color)Application.Current.Resources["GreenDark"]);
             this.soundService = new SoundService();
             this.eventAggregator = eventAggregator;
             StartStopCommand = new DelegateCommand(StartStop);
@@ -97,23 +100,28 @@ namespace Pomodoro.ViewModels
         private void ChangeState(string activityId)
         {
             ChangeState((Activity)int.Parse(activityId));
+
         }
 
         public void ChangeState(Activity activity)
         {
-
+            var statusBarStyleManager = DependencyService.Get<IStatusBarStyleManager>();
+            
             if (activity == Activity.LongBreak)
             {
                 Durations = config.LongBreak * 60;
                 pomodoros = 0;
+                statusBarStyleManager.SetColor((Color)Application.Current.Resources["Red"]);
             }
             else if (activity == Activity.ShortBreak)
             {
                 Durations = config.ShortBreak * 60;
+                statusBarStyleManager.SetColor((Color)Application.Current.Resources["Red"]);
             }
             else
             {
                 Durations = config.Working * 60;
+                statusBarStyleManager.SetColor((Color)Application.Current.Resources["GreenDark"]);
             }
 
             CurrentActivity = activity;
