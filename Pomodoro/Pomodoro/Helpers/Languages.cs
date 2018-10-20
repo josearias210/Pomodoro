@@ -150,6 +150,37 @@ namespace Pomodoro.Helpers
         {
             get { return Resource.SuccessSaveConfiguration; }
         }
+
+        public static string TakeABreak
+        {
+            get { return Resource.TakeABreak; }
+        }
+
+        public static string BackToWork
+        {
+            get { return Resource.BackToWork; }
+        }
+
+        public static string LetsGo
+        {
+            get { return Resource.LetsGo; }
+        }
+
+        public static string LongBreak
+        {
+            get { return Resource.LongBreak; }
+        }
+
+        public static string ShortBreak
+        {
+            get { return Resource.ShortBreak; }
+        }
+        /*
+	
+LongBreak	You can now have a long break...	
+ShortBreak	You can now have a short break...	
+
+         */
         #endregion
     }
 }

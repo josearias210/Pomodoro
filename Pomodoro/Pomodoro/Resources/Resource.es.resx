@@ -198,4 +198,19 @@
   <data name="Yes" xml:space="preserve">
     <value>Si</value>
   </data>
+  <data name="BackToWork" xml:space="preserve">
+    <value>hora de volver al trabajo!</value>
+  </data>
+  <data name="LetsGo" xml:space="preserve">
+    <value>Vámos</value>
+  </data>
+  <data name="LongBreak" xml:space="preserve">
+    <value>Ahora puedes tomarte un descanso  largo...</value>
+  </data>
+  <data name="ShortBreak" xml:space="preserve">
+    <value>Ahora puedes tomarte un descanso  breve...</value>
+  </data>
+  <data name="TakeABreak" xml:space="preserve">
+    <value>¡Tómate un descanso!</value>
+  </data>
 </root>

@@ -10,6 +10,7 @@ using Prism.Navigation;
 using System;
 using System.Timers;
 using Plugin.LocalNotifications;
+using Pomodoro.Helpers;
 
 namespace Pomodoro.ViewModels
 {
@@ -143,12 +144,12 @@ namespace Pomodoro.ViewModels
                 {
                     ChangeState(Activity.LongBreak);
                     
-                    CrossLocalNotifications.Current.Show("Take a break!", "You can now have a long break...");
+                    CrossLocalNotifications.Current.Show(Languages.TakeABreak,Languages.LongBreak);
                 }
                 else
                 {
                     ChangeState(Activity.ShortBreak);
-                    CrossLocalNotifications.Current.Show("Take a break!", "You can now have a short break...");
+                    CrossLocalNotifications.Current.Show(Languages.TakeABreak, Languages.ShortBreak);
                 }
             }
 
@@ -157,7 +158,7 @@ namespace Pomodoro.ViewModels
             {
                 AddHistory(Elapsed.TotalMinutes, false);
                 ChangeState(Activity.Working);
-                CrossLocalNotifications.Current.Show("Let´s go", "Time to go back to work!");
+                CrossLocalNotifications.Current.Show(Languages.LetsGo, Languages.BackToWork);
             }
 
         }

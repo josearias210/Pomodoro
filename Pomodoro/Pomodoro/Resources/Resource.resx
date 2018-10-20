@@ -198,4 +198,19 @@
   <data name="SuccessSaveConfiguration" xml:space="preserve">
     <value>Save configuration successfully</value>
   </data>
+  <data name="BackToWork" xml:space="preserve">
+    <value>Time to go back to work!</value>
+  </data>
+  <data name="LetsGo" xml:space="preserve">
+    <value>Let´s go</value>
+  </data>
+  <data name="LongBreak" xml:space="preserve">
+    <value>You can now have a long break...</value>
+  </data>
+  <data name="ShortBreak" xml:space="preserve">
+    <value>You can now have a short break...</value>
+  </data>
+  <data name="TakeABreak" xml:space="preserve">
+    <value>Take a break!</value>
+  </data>
 </root>

@@ -70,6 +70,15 @@ namespace Pomodoro.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Time to go back to work!.
+        /// </summary>
+        internal static string BackToWork {
+            get {
+                return ResourceManager.GetString("BackToWork", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Breaks.
         /// </summary>
         internal static string Breaks {
@@ -138,6 +147,24 @@ namespace Pomodoro.Resources {
         internal static string History {
             get {
                 return ResourceManager.GetString("History", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Let´s go.
+        /// </summary>
+        internal static string LetsGo {
+            get {
+                return ResourceManager.GetString("LetsGo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a You can now have a long break....
+        /// </summary>
+        internal static string LongBreak {
+            get {
+                return ResourceManager.GetString("LongBreak", resourceCulture);
             }
         }
         
@@ -232,6 +259,15 @@ namespace Pomodoro.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a You can now have a short break....
+        /// </summary>
+        internal static string ShortBreak {
+            get {
+                return ResourceManager.GetString("ShortBreak", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Short break time.
         /// </summary>
         internal static string ShortBreaks {
@@ -282,6 +318,15 @@ namespace Pomodoro.Resources {
         internal static string SummaryDay {
             get {
                 return ResourceManager.GetString("SummaryDay", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Take a break!.
+        /// </summary>
+        internal static string TakeABreak {
+            get {
+                return ResourceManager.GetString("TakeABreak", resourceCulture);
             }
         }
         
