@@ -20,6 +20,8 @@ namespace Pomodoro.ViewModels
         private int pomodoros = 0;
         private bool isRunning;
         private bool isWorking;
+        private bool isLottieVisible=true;
+        private bool isTimmerVisible=false;
         private Activity currentActivity;
         private Configuration config;
         private int durations;
@@ -64,6 +66,16 @@ namespace Pomodoro.ViewModels
             set { SetProperty(ref isRunning, value); }
         }
 
+        public bool IsLottieVisible
+        {
+            get { return isLottieVisible; }
+            set { SetProperty(ref isLottieVisible, value); }
+        }
+        public bool IsTimmerVisible
+        {
+            get { return isTimmerVisible; }
+            set { SetProperty(ref isTimmerVisible, value); }
+        }
         #endregion
 
         #region Commands
@@ -195,10 +207,12 @@ namespace Pomodoro.ViewModels
             if (IsRunning)
             {
                 Stop();
-
+                
             }
             else
             {
+                IsLottieVisible = false;
+                IsTimmerVisible = true;
                 Start();
             }
         }

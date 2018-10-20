@@ -5,6 +5,7 @@
              xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
              xmlns:Inverter="clr-namespace:Pomodoro.Converts"
              xmlns:controls="clr-namespace:Pomodoro.Controls"
+             xmlns:lottie="clr-namespace:Lottie.Forms;assembly=Lottie.Forms"
              prism:ViewModelLocator.AutowireViewModel="True"
              x:Class="Pomodoro.Views.PomodoroPage"
              Title="{i18n:Translate Pomodoro}">
@@ -34,6 +35,15 @@
         
     </ContentPage.ToolbarItems>
     <Grid>
+        <lottie:AnimationView
+         x:Name="LottieView" 
+         IsVisible="{Binding IsLottieVisible}"
+         Animation="hourglass.json" 
+         Loop="False" 
+         AutoPlay="{Binding IsLottieVisible}" 
+         Speed="0.5"
+         VerticalOptions="FillAndExpand"
+         HorizontalOptions="FillAndExpand" />
         <Grid.Triggers>
             <DataTrigger TargetType="Grid" 
                          Binding="{Binding IsWorking}" 
@@ -58,6 +68,7 @@
 
         <Label VerticalOptions="Center"
                HorizontalOptions="Center" 
+               IsVisible="{Binding IsTimmerVisible}"
                FontSize="50"
                TextColor="White"
                Text="{Binding Elapsed, StringFormat='{}{0:t}'}"/>
