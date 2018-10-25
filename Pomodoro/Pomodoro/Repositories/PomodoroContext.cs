@@ -33,6 +33,9 @@ namespace Pomodoro.Repositories
                 case Device.Android:
                     databasePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Personal), databaseName);
                     break;
+                case Device.iOS:
+                    databasePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Personal), databaseName);
+                    break;
                 default:
                     throw new NotImplementedException("Platform not supported");
             }

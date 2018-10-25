@@ -82,14 +82,14 @@ namespace Pomodoro.ViewModels
         #region Constructors
         public PomodoroPageViewModel(IEventAggregator eventAggregator)
         {
-            
+
             this.soundService = new SoundService();
             this.eventAggregator = eventAggregator;
             StartStopCommand = new DelegateCommand(StartStop);
             ChangeStateCommand = new DelegateCommand<string>(ChangeState);
             Loadconfiguracion();
             ConfigureTimer();
-            
+
         }
         #endregion
 
