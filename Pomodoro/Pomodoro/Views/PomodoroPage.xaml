@@ -19,7 +19,7 @@
                      Priority="1"
                      Command="{Binding ChangeStateCommand}"
                      CommandParameter="1" />
-        
+
         <ToolbarItem Order="Secondary"
                      Text="{i18n:Translate ShortBreakSet}"
                      Priority="2" 
@@ -31,7 +31,7 @@
                      Priority="3" 
                      Command="{Binding ChangeStateCommand}"
                      CommandParameter="3" />
-        
+
     </ContentPage.ToolbarItems>
     <Grid>
         <Grid.Triggers>
@@ -80,5 +80,5 @@
             </Button.Triggers>
         </Button>
     </Grid>
-    
+
 </ContentPage>
