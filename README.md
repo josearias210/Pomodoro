@@ -1,7 +1,7 @@
 # Pomodoro [![Build status](https://build.appcenter.ms/v0.1/apps/1bcd92af-e0b0-4c20-ba05-3e5c9629dcce/branches/master/badge)](https://appcenter.ms)
 
-[![Screenshot](Screenshot/Pomodoro.png)]
-[![Screenshot](Screenshot/Historial.png)]
+[![Screenshot](Screenshots/Android/Pomodoro.png)]
+[![Screenshot](Screenshots/Android/Historial.png)]
 
 # Demostración
 Puedes descargar e instalar la app desde la tienda de [Google Play](https://play.google.com/store/apps/details?id=com.ariasantonio.pomodoro) 
