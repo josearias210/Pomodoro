@@ -1,4 +1,5 @@
 ﻿using Pomodoro.Events;
+using Pomodoro.Services;
 using Prism.Events;
 using Xamarin.Forms;
 
@@ -8,12 +9,14 @@ namespace Pomodoro.Controls
     {
         #region Injects
         IEventAggregator _eventAggregator;
+        IStatusBarColorService _statusBarColorService;
         #endregion
 
         #region Contructs
-        public PomodoroNavigationPage(IEventAggregator eventAggregator)
+        public PomodoroNavigationPage(IEventAggregator eventAggregator, IStatusBarColorService statusBarColorService)
         {
             _eventAggregator = eventAggregator;
+            _statusBarColorService = statusBarColorService;
 
         }
         #endregion
@@ -41,10 +44,12 @@ namespace Pomodoro.Controls
                 if (isWorking)
                 {
                     this.BarBackgroundColor = Color.DarkGreen;
+                    _statusBarColorService.ChangeColor(Color.DarkGreen);
                 }
                 else
                 {
                     this.BarBackgroundColor = Color.Red;
+                    _statusBarColorService.ChangeColor(Color.Red);
                 }
             });
         }
